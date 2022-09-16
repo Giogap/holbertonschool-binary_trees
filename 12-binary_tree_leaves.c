@@ -9,6 +9,13 @@
 
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
+	int lLeaves = 0;
+	int rLeaves = 0;
+
+	if (tree == NULL)
+	{
+		return (0);
+	}
 
 
 
