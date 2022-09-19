@@ -38,3 +38,29 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 	}
 	return (0);
 }
+
+/**
+ * binary_tree_is_perfect - check code
+ * @tree: pointer to the root node of the tree to check
+ * Return: ---
+ */
+
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	if (binary_tree_is_leaf(tree))
+	{
+		return (1);
+	}
+	if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
+	{
+		if (binary_tree_is_perfect(tree->left) && binary_tree_is_perfect(tree->right))
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
